@@ -1,0 +1,1147 @@
+<!DOCTYPE html>
+<html lang="pt-BR" data-theme="dark">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>André Martins — Desenvolvedor Mobile & Full Stack</title>
+<meta name="description" content="Portfólio de André Luiz Jesus Martins, desenvolvedor Mobile e Full Stack. APIs em Java com Spring Boot, sites em Angular e apps em React Native." />
+<meta name="theme-color" content="#08090c" />
+
+<!-- Prévia ao compartilhar o link (troque a URL depois de publicar) -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="André Martins — Desenvolvedor Mobile & Full Stack" />
+<meta property="og:description" content="APIs em Java, sites em Angular e apps em React Native. Veja meus projetos." />
+<meta property="og:image" content="https://SEU-SITE.com/img/og.jpg" />
+<meta property="og:url" content="https://SEU-SITE.com/" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2308090c'/%3E%3Ctext x='32' y='42' font-size='28' font-family='sans-serif' font-weight='700' text-anchor='middle' fill='%233d7dff'%3EAM%3C/text%3E%3C/svg%3E" />
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"André Luiz Jesus Martins","jobTitle":"Desenvolvedor Mobile e Full Stack",
+"sameAs":["https://github.com/andreemartinns","https://www.linkedin.com/in/andr%C3%A9-martins-2670bb302/","https://www.instagram.com/andree.martinns/"]}
+</script>
+
+<script>try{var t=localStorage.getItem('theme');if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root{
+    --bg:#08090c; --fg:#eceef2; --muted:#7d8391; --line:#1a1d25; --card:#0e1015;
+    --stroke:#4a4f5c; --ring:rgba(255,255,255,.35);
+    --accent:#3d7dff; --accent-rgb:61,125,255;
+  }
+  [data-theme="light"]{
+    --bg:#eef0f5; --fg:#0a0c12; --muted:#3f4552; --line:#c3c8d4; --card:#ffffff;
+    --stroke:#6b7284; --ring:rgba(0,0,0,.45);
+    --accent:#1f56e6; --accent-rgb:31,86,230;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:auto}
+  body{background:var(--bg);color:var(--fg);font-family:'Space Grotesk',sans-serif;overflow-x:hidden;cursor:none}
+  a{color:inherit;text-decoration:none;cursor:none}
+  button{cursor:none;font:inherit;color:inherit}
+  ::selection{background:var(--accent);color:#fff}
+  .mono{font-family:'JetBrains Mono',monospace}
+
+  ::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+
+  body::after{content:"";position:fixed;inset:0;pointer-events:none;z-index:90;opacity:.05;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+  [data-theme="light"] body::after{opacity:.03}
+
+  /* cursor */
+  .cursor{position:fixed;top:0;left:0;width:14px;height:14px;border-radius:50%;background:var(--accent);
+    pointer-events:none;z-index:100;mix-blend-mode:difference;transform:translate(-50%,-50%)}
+  .cursor-ring{position:fixed;top:0;left:0;width:44px;height:44px;border-radius:50%;border:1px solid var(--ring);
+    pointer-events:none;z-index:99;transform:translate(-50%,-50%);
+    display:grid;place-items:center;transition:background .3s,border-color .3s}
+  .cursor-ring span{font:500 8px 'JetBrains Mono',monospace;color:var(--fg);opacity:0;transition:opacity .25s;letter-spacing:.08em;text-transform:uppercase}
+  .cursor-ring.on{background:rgba(var(--accent-rgb),.16);border-color:var(--accent)}
+  .cursor-ring.on span{opacity:1}
+  [data-theme="light"] .cursor{mix-blend-mode:normal}
+
+  /* preloader */
+  .loader{position:fixed;inset:0;background:var(--bg);z-index:200;display:flex;align-items:flex-end;justify-content:space-between;padding:3rem}
+  .loader .count{font-size:clamp(5rem,18vw,14rem);font-weight:700;line-height:.8}
+  .loader .tag{color:var(--muted);font-size:.8rem}
+
+  /* nav */
+  nav{position:fixed;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;
+    padding:1.4rem 3rem;z-index:50;mix-blend-mode:difference;color:#fff}
+  [data-theme="light"] nav{mix-blend-mode:normal;color:var(--fg)}
+  nav .logo{font-weight:700;letter-spacing:-.02em}
+  .nav-right{display:flex;align-items:center;gap:1.6rem}
+  nav ul{display:flex;gap:1.8rem;list-style:none;font-size:.85rem}
+  nav ul a{position:relative}
+  nav ul a::after{content:"";position:absolute;left:0;bottom:-4px;height:1px;width:100%;background:currentColor;
+    transform:scaleX(0);transform-origin:right;transition:transform .5s cubic-bezier(.7,0,.2,1)}
+  nav ul a:hover::after{transform:scaleX(1);transform-origin:left}
+  .theme{width:38px;height:38px;border-radius:50%;border:1px solid currentColor;background:none;color:inherit;
+    display:grid;place-items:center;font-size:1rem;line-height:1}
+  .theme.lang{font-size:.7rem}
+
+  /* botões */
+  .btn{display:inline-block;padding:.95rem 1.8rem;border-radius:99px;background:var(--accent);color:#fff;font-weight:700;font-size:.9rem;border:1px solid var(--accent)}
+  .btn.ghost{background:transparent;color:var(--fg);border-color:var(--line)}
+  [data-theme="light"] .btn.ghost{border-color:#b4bac8}
+  .btn-row{display:flex;gap:1rem;flex-wrap:wrap}
+
+  /* hero */
+  .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:0 3rem;position:relative;overflow:hidden}
+  .glow{position:absolute;width:520px;height:520px;border-radius:50%;pointer-events:none;
+    background:radial-gradient(circle,rgba(var(--accent-rgb),.22),transparent 65%);filter:blur(30px);
+    transform:translate(-50%,-50%);top:50%;left:50%}
+  [data-theme="light"] .glow{opacity:.6}
+  #bg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none;opacity:0;transition:opacity 1.6s ease}
+  .hero .eyebrow,.hero h1,.hero .role,.hero .btn-row{position:relative;z-index:1}
+  .hero .eyebrow{color:var(--accent);font-size:.85rem;margin-bottom:1.5rem}
+  .hero h1{font-size:clamp(2.6rem,9.5vw,10rem);line-height:.92;letter-spacing:-.05em;font-weight:700}
+  .hero h1 .line{display:block;overflow:hidden;padding-bottom:.08em}
+  .hero h1 .ch{display:inline-block;will-change:transform}
+  .hero .role{margin-top:2rem;font-size:clamp(1rem,2vw,1.4rem);color:var(--muted)}
+  .hero .role span{color:var(--fg)}
+  .hero .btn-row{margin-top:2.2rem}
+  .scroll-hint{position:absolute;bottom:2.5rem;left:3rem;font-size:.75rem;color:var(--muted);display:flex;gap:.8rem;align-items:center;z-index:1}
+  .scroll-hint i{display:block;width:60px;height:1px;background:var(--muted);transform-origin:left}
+
+  /* marquee */
+  .marquee{border-block:1px solid var(--line);padding:1.6rem 0;overflow:hidden;white-space:nowrap}
+  .marquee .track{display:inline-flex;gap:3rem;will-change:transform}
+  .marquee span{font-size:clamp(1.6rem,4vw,3rem);font-weight:500;letter-spacing:-.03em;color:transparent;-webkit-text-stroke:1px var(--stroke)}
+  .marquee span:nth-child(3n){color:var(--fg);-webkit-text-stroke:0}
+  [data-theme="light"] .marquee span{-webkit-text-stroke-width:1.4px}
+  [data-theme="light"] .marquee span:nth-child(3n){-webkit-text-stroke:0}
+
+  /* about */
+  .about{padding:14rem 3rem 10rem;max-width:1300px;margin:auto}
+  .about .label{color:var(--accent);font-size:.8rem;margin-bottom:2.5rem}
+  .about p{font-size:clamp(1.6rem,3.6vw,3.2rem);line-height:1.2;letter-spacing:-.03em;font-weight:500}
+  .about p .w{opacity:.14;display:inline-block;margin-right:.28em}
+  [data-theme="light"] .about p .w{opacity:.22}
+
+  /* terminal */
+  .term{margin-top:6rem;max-width:760px;border:1px solid var(--line);border-radius:16px;background:var(--card);overflow:hidden}
+  .term-bar{display:flex;align-items:center;gap:.5rem;padding:.8rem 1rem;border-bottom:1px solid var(--line);font-size:.72rem;color:var(--muted)}
+  .term-bar i{width:10px;height:10px;border-radius:50%;background:var(--line);display:block}
+  .term-bar i:first-child{background:var(--accent)}
+  .term-bar span{margin-left:.6rem}
+  .term-body{padding:1rem 1.2rem;font-size:.82rem;line-height:1.7;height:230px;overflow:auto;color:var(--muted)}
+  .term-body .cmd{color:var(--fg)}
+  .term-body .cmd b{color:var(--accent);font-weight:500}
+  .term-body div{white-space:pre-wrap}
+  .term-in{display:flex;gap:.7rem;align-items:center;padding:.8rem 1.2rem;border-top:1px solid var(--line);font-size:.82rem}
+  .term-in span{color:var(--accent)}
+  .term-in input{flex:1;background:none;border:0;outline:0;color:var(--fg);font:inherit;cursor:text}
+
+  /* work */
+  .work{height:100vh;display:flex;align-items:center;overflow:hidden}
+  .work .rail{display:flex;gap:2rem;padding:0 3rem;will-change:transform}
+  .work .intro{flex:0 0 30vw;display:flex;flex-direction:column;justify-content:center}
+  .work .intro h2{font-size:clamp(2.5rem,6vw,5.5rem);letter-spacing:-.05em;line-height:.95}
+  .work .intro p{color:var(--muted);margin-top:1.2rem;font-size:.9rem}
+  .card{--x:50%;--y:50%;position:relative;flex:0 0 min(46vw,640px);height:76vh;border:1px solid var(--line);
+    border-radius:22px;background:var(--card);padding:1.6rem;display:flex;flex-direction:column;gap:1.1rem;overflow:hidden;will-change:transform}
+  .card::before{content:"";position:absolute;inset:0;border-radius:inherit;opacity:0;transition:opacity .4s;pointer-events:none;
+    background:radial-gradient(420px circle at var(--x) var(--y),rgba(var(--accent-rgb),.14),transparent 60%)}
+  .card:hover::before{opacity:1}
+  .card > *{position:relative}
+  .card .num{font-size:.8rem;color:var(--muted)}
+  .shot{position:relative;flex:1;min-height:0;border-radius:14px;overflow:hidden;border:1px solid var(--line);
+    background:linear-gradient(135deg,rgba(var(--accent-rgb),.35),rgba(var(--accent-rgb),.05)),var(--card)}
+  .shot::before{content:attr(data-label);position:absolute;inset:0;display:grid;place-items:center;
+    font-size:clamp(3rem,8vw,6rem);font-weight:700;letter-spacing:-.05em;opacity:.35}
+  .shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    transition:transform .9s cubic-bezier(.2,.7,.2,1)}
+  .work .card .shot img{inset:0 auto 0 -14%;width:128%}
+  .card:hover .shot img{transform:scale(1.07)}
+  .card h3{font-size:clamp(1.6rem,3vw,2.6rem);letter-spacing:-.04em;line-height:1}
+  .card p{color:var(--muted);margin-top:.8rem;max-width:44ch;line-height:1.5;font-size:.95rem}
+  .tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
+  .tags span{font-size:.72rem;border:1px solid var(--line);padding:.35rem .8rem;border-radius:99px;color:var(--muted)}
+  [data-theme="light"] .tags span{border-color:#b4bac8}
+  .card .go{display:inline-flex;align-items:center;gap:.6rem;font-size:.85rem;color:var(--accent);align-self:flex-start;background:none;border:0;padding:0}
+
+  /* painel de detalhes */
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:70;display:none;opacity:0}
+  [data-theme="light"] .scrim{background:rgba(10,12,18,.35)}
+  .panel{position:fixed;top:0;right:0;bottom:0;width:min(580px,100%);background:var(--card);border-left:1px solid var(--line);
+    z-index:80;display:none;flex-direction:column}
+  .scrim.open{display:block}.panel.open{display:flex}
+  .panel-top{display:flex;justify-content:space-between;align-items:center;padding:1.2rem 2rem;border-bottom:1px solid var(--line);color:var(--muted);font-size:.78rem}
+  .panel-body{padding:2rem;overflow:auto;flex:1}
+  .panel-body > *{margin-bottom:1.2rem}
+  .panel-shot{flex:none;height:220px;width:100%}
+  .panel-num{color:var(--muted);font-size:.78rem}
+  .panel-body h3{font-size:clamp(2rem,5vw,3rem);letter-spacing:-.04em;line-height:1}
+  .panel-body h4{color:var(--accent);font-size:.78rem;font-weight:500;margin:2rem 0 .8rem}
+  .panel-sum{color:var(--muted);line-height:1.6}
+  .badge{display:inline-flex;align-items:center;gap:.5rem;font-size:.75rem;border:1px solid var(--line);padding:.35rem .9rem;border-radius:99px;color:var(--muted)}
+  .badge::before{content:"";width:7px;height:7px;border-radius:50%;background:#3ddc97}
+  .badge.dev::before{background:#ffb454}
+  .panel-body ul{list-style:none;display:grid;gap:.6rem}
+  .panel-body li{padding-left:1.4rem;position:relative;line-height:1.5}
+  .panel-body li::before{content:"→";position:absolute;left:0;color:var(--accent)}
+  .panel-note{font-size:.85rem;color:var(--muted);border-left:2px solid var(--accent);padding-left:1rem}
+  .panel-links{display:flex;gap:.8rem;flex-wrap:wrap}
+
+  /* stack */
+  .stack,.gh{padding:10rem 3rem 2rem;max-width:1300px;margin:auto}
+  .gh{padding-top:8rem;padding-bottom:6rem}
+  .stack h2,.gh h2,.edu h2{font-size:clamp(2.4rem,6vw,5rem);letter-spacing:-.05em;margin-bottom:4rem}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:1rem}
+  .tech{--x:50%;--y:50%;position:relative;border:1px solid var(--line);border-radius:16px;padding:1.4rem;background:var(--card);overflow:hidden;will-change:transform}
+  .tech::before{content:"";position:absolute;inset:0;opacity:0;transition:opacity .3s;
+    background:radial-gradient(260px circle at var(--x) var(--y),rgba(var(--accent-rgb),.18),transparent 60%)}
+  .tech:hover::before{opacity:1}
+  .tech b{display:block;font-size:1.1rem;position:relative}
+  .tech small{color:var(--muted);position:relative;font-size:.78rem}
+
+  /* github ao vivo */
+  .gh-loading{color:var(--muted);font-size:.85rem}
+  .gh-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:2.2rem}
+  .stat{border:1px solid var(--line);background:var(--card);border-radius:16px;padding:1.4rem}
+  .stat b{display:block;font-size:clamp(2rem,5vw,3.4rem);letter-spacing:-.04em;line-height:1}
+  .stat small{color:var(--muted);font-size:.78rem}
+  .gh h5{font-weight:500;font-size:.78rem;color:var(--accent);margin:2rem 0 .8rem}
+  .langbar{display:flex;height:10px;border-radius:10px;overflow:hidden;gap:2px}
+  .langbar i{display:block;height:100%}
+  .legend{display:flex;flex-wrap:wrap;gap:1.2rem;font-size:.78rem;color:var(--muted);margin-top:1rem}
+  .legend span::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--c);margin-right:.5rem}
+  .repos{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1rem}
+  .repo{border:1px solid var(--line);background:var(--card);border-radius:16px;padding:1.3rem;display:flex;flex-direction:column;gap:.7rem;
+    transition:transform .4s cubic-bezier(.2,.7,.2,1),border-color .3s}
+  .repo:hover{transform:translateY(-5px);border-color:var(--accent)}
+  .repo b{font-size:1.05rem;letter-spacing:-.02em;word-break:break-word}
+  .repo p{color:var(--muted);font-size:.85rem;line-height:1.5;flex:1}
+  .repo .meta{display:flex;gap:1rem;flex-wrap:wrap;font-size:.72rem;color:var(--muted)}
+  .gh-more{display:inline-block;margin-top:2rem;font-size:.85rem;color:var(--accent)}
+
+  /* formação */
+  .edu{padding:6rem 3rem 10rem;max-width:1300px;margin:auto}
+  .edu-card{display:flex;gap:2rem;border:1px solid var(--line);background:var(--card);border-radius:22px;padding:2.4rem}
+  .edu-line{width:2px;background:var(--line);border-radius:2px;position:relative;overflow:hidden;flex:0 0 2px}
+  .edu-line i{position:absolute;inset:0;background:var(--accent);transform-origin:top;transform:scaleY(0)}
+  .edu-card small{color:var(--accent);font-size:.78rem}
+  .edu-card h3{font-size:clamp(1.8rem,4vw,3rem);letter-spacing:-.04em;line-height:1.05;margin:.7rem 0 .4rem}
+  .edu-card p{color:var(--muted)}
+  .bar{height:6px;border-radius:6px;background:var(--line);overflow:hidden;margin:1.8rem 0 .7rem;max-width:520px}
+  .bar b{display:block;height:100%;width:100%;background:var(--accent);transform-origin:left;transform:scaleX(.8)}
+  .edu-card .prog{font-size:.75rem;color:var(--muted)}
+
+  [data-theme="light"] .card,[data-theme="light"] .tech,[data-theme="light"] .edu-card,
+  [data-theme="light"] .stat,[data-theme="light"] .repo,[data-theme="light"] .term{box-shadow:0 12px 30px -18px rgba(10,12,18,.3)}
+
+  /* contact */
+  .contact{padding:10rem 3rem 4rem;text-align:center;border-top:1px solid var(--line)}
+  .contact h2{font-size:clamp(2.6rem,9vw,8rem);letter-spacing:-.05em;line-height:.95}
+  .contact h2 em{font-style:normal;color:var(--accent);
+    background:linear-gradient(90deg,var(--accent),#9fbfff,var(--accent));background-size:200% 100%;
+    -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:shine 4s linear infinite}
+  @keyframes shine{to{background-position:-200% 0}}
+  .contact-actions{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-top:3rem}
+  .links{display:flex;justify-content:center;gap:2rem;margin-top:5rem;font-size:.85rem;color:var(--muted);flex-wrap:wrap}
+  .links a{display:inline-block}
+  .links a:hover{color:var(--fg)}
+  footer{padding:2rem 3rem;color:var(--muted);font-size:.75rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+
+  @media (max-width:800px){
+    body,a,button{cursor:auto}.cursor,.cursor-ring{display:none}
+    nav{padding:1.1rem 1.5rem}nav ul{display:none}
+    .hero,.about,.stack,.gh,.contact,.edu{padding-left:1.5rem;padding-right:1.5rem}
+    .scroll-hint{left:1.5rem}
+    .work .intro{flex-basis:80vw}.card{flex-basis:84vw}
+    .edu-card{padding:1.6rem}
+    .gh-stats{grid-template-columns:1fr}
+    .panel-body{padding:1.4rem}
+    footer{padding:2rem 1.5rem}
+  }
+  @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+
+<div class="cursor"></div><div class="cursor-ring"></div>
+
+<div class="loader">
+  <div class="count mono">0</div>
+  <div class="tag mono" data-i18n="l.tag">carregando portfólio…</div>
+</div>
+
+<nav>
+  <a href="#top" class="logo" data-magnetic>AM.</a>
+  <div class="nav-right">
+    <ul class="mono">
+      <li><a href="#sobre" data-i18n="n.about">sobre</a></li>
+      <li><a href="#projetos" data-i18n="n.work">projetos</a></li>
+      <li><a href="#stack" data-i18n="n.stack">stack</a></li>
+      <li><a href="#github" data-i18n="n.github">github</a></li>
+      <li><a href="#formacao" data-i18n="n.edu">formação</a></li>
+      <li><a href="#contato" data-i18n="n.contact">contato</a></li>
+    </ul>
+    <button class="theme lang mono" id="langBtn" aria-label="Mudar idioma / Change language" data-magnetic>EN</button>
+    <button class="theme" id="themeBtn" aria-label="Alternar tema claro/escuro" data-magnetic>◐</button>
+  </div>
+</nav>
+
+<main id="top">
+  <section class="hero">
+    <div class="glow"></div>
+    <canvas id="bg"></canvas>
+    <p class="eyebrow mono" data-i18n="h.eyebrow">// aberto a novas oportunidades</p>
+    <h1>
+      <span class="line split">André Luiz</span>
+      <span class="line split">Jesus Martins</span>
+    </h1>
+    <p class="role" data-i18n-html="h.role">Desenvolvedor <span id="scramble">Mobile & Full Stack</span> — apps e sites do front ao back-end.</p>
+    <div class="btn-row">
+      <a href="curriculo-andre-martins.pdf" download class="btn" data-magnetic data-i18n="h.cv">baixar currículo ↓</a>
+      <a href="#projetos" class="btn ghost" data-magnetic data-i18n="h.proj">ver projetos</a>
+    </div>
+    <div class="scroll-hint mono"><i></i><span data-i18n="h.scroll">role para explorar</span></div>
+  </section>
+
+  <div class="marquee">
+    <div class="track">
+      <span>Angular</span><span>React Native</span><span>Expo</span><span>TypeScript</span><span>Node.js</span><span>Java</span><span>Spring Boot</span><span>Mobile</span><span>Full Stack</span>
+      <span>Angular</span><span>React Native</span><span>Expo</span><span>TypeScript</span><span>Node.js</span><span>Java</span><span>Spring Boot</span><span>Mobile</span><span>Full Stack</span>
+    </div>
+  </div>
+
+  <section class="about" id="sobre">
+    <p class="label mono" data-i18n="a.label">01 — sobre</p>
+    <p id="about-text" data-i18n="a.text">Estudante do penúltimo semestre de Sistemas para Internet no Senac, construo produtos completos do mobile ao back-end. Desenvolvo APIs em Java com Spring Boot e Node.js, sites em Angular e apps em React Native, e gosto de transformar ideias em interfaces rápidas e bem animadas.</p>
+
+    <div class="term" id="term">
+      <div class="term-bar mono"><i></i><i></i><i></i><span>andre@portfolio ~</span></div>
+      <div class="term-body mono" id="termBody" data-lenis-prevent></div>
+      <label class="term-in mono"><span>$</span>
+        <input id="termInput" autocomplete="off" spellcheck="false" aria-label="terminal" placeholder="digite 'help'" data-i18n-ph="t.ph" />
+      </label>
+    </div>
+  </section>
+
+  <section class="work" id="projetos">
+    <div class="rail">
+      <div class="intro">
+        <p class="label mono" style="color:var(--accent);font-size:.8rem;margin-bottom:1.5rem" data-i18n="w.label">02 — projetos</p>
+        <h2 data-i18n-html="w.title">Trabalhos<br>selecionados</h2>
+        <p class="mono" data-i18n="w.hint">role → para navegar</p>
+      </div>
+
+      <article class="card" data-project="ritmo">
+        <div class="num mono">01 / 04</div>
+        <div class="shot" data-label="RB">
+          <img src="img/ritmo-brasil.jpg" alt="App Ritmo Brasil" onerror="this.remove()">
+        </div>
+        <div>
+          <h3>App Ritmo Brasil</h3>
+          <p data-i18n="c1.d">App de treino no esquema push/pull/legs, com cargas, recordes e sequência de dias treinados.</p>
+          <div class="tags"><span>React Native</span><span>Expo</span><span>Supabase</span></div>
+        </div>
+        <button type="button" class="go" data-magnetic data-i18n="c.go">ver detalhes ↗</button>
+      </article>
+
+      <article class="card" data-project="archv">
+        <div class="num mono">02 / 04</div>
+        <div class="shot" data-label="AR">
+          <img src="img/archv-rooms.jpg" alt="Archv Rooms" onerror="this.remove()">
+        </div>
+        <div>
+          <h3>Archv Rooms</h3>
+          <p data-i18n="c2.d">Plataforma de jogos retrô por assinatura, do front-end ao back-end, com painel administrativo.</p>
+          <div class="tags"><span>Angular</span><span>Node.js</span><span>Prisma</span><span>React Native</span></div>
+        </div>
+        <button type="button" class="go" data-magnetic data-i18n="c.go">ver detalhes ↗</button>
+      </article>
+
+      <article class="card" data-project="gpms">
+        <div class="num mono">03 / 04</div>
+        <div class="shot" data-label="GPMS">
+          <img src="img/advocacia.jpg" alt="Site GPMS Advocacia" onerror="this.remove()">
+        </div>
+        <div>
+          <h3>GPMS Advocacia</h3>
+          <p data-i18n="c3.d">Site para escritório de advocacia trabalhista em São Paulo. Em desenvolvimento.</p>
+          <div class="tags"><span>Angular</span><span>TypeScript</span></div>
+        </div>
+        <button type="button" class="go" data-magnetic data-i18n="c.go">ver detalhes ↗</button>
+      </article>
+
+      <article class="card" data-project="biblioteca">
+        <div class="num mono">04 / 04</div>
+        <div class="shot" data-label="API">
+          <img src="img/biblioteca-api.jpg" alt="API da Biblioteca" onerror="this.remove()">
+        </div>
+        <div>
+          <h3>API da Biblioteca</h3>
+          <p data-i18n="c4.d">API REST em Java e Spring Boot para livros, autores, empréstimos e usuários. Projeto final de Web Services no Senac.</p>
+          <div class="tags"><span>Java 17</span><span>Spring Boot</span><span>Docker</span></div>
+        </div>
+        <button type="button" class="go" data-magnetic data-i18n="c.go">ver detalhes ↗</button>
+      </article>
+    </div>
+  </section>
+
+  <section class="stack" id="stack">
+    <p class="mono" style="color:var(--accent);font-size:.8rem;margin-bottom:1.5rem" data-i18n="s.label">03 — stack</p>
+    <h2 data-i18n="s.title">Tecnologias</h2>
+    <div class="grid">
+      <div class="tech"><b>Java</b><small data-i18n="s.api">APIs REST</small></div>
+      <div class="tech"><b>Spring Boot</b><small data-i18n="s.back">back-end</small></div>
+      <div class="tech"><b>Node.js</b><small data-i18n="s.back">back-end</small></div>
+      <div class="tech"><b>Angular</b><small data-i18n="s.web">front-end web</small></div>
+      <div class="tech"><b>React Native</b><small data-i18n="s.mobile">apps mobile</small></div>
+      <div class="tech"><b>Expo</b><small data-i18n="s.mdev">desenvolvimento mobile</small></div>
+      <div class="tech"><b>TypeScript</b><small data-i18n="s.lang">linguagem</small></div>
+      <div class="tech"><b>Supabase</b><small data-i18n="s.db">banco de dados</small></div>
+      <div class="tech"><b>MySQL</b><small data-i18n="s.db">banco de dados</small></div>
+      <div class="tech"><b data-i18n="s.more">+ mais por vir</b><small data-i18n="s.more2">sempre aprendendo</small></div>
+    </div>
+  </section>
+
+  <section class="gh" id="github">
+    <p class="mono" style="color:var(--accent);font-size:.8rem;margin-bottom:1.5rem" data-i18n="g.label">04 — github ao vivo</p>
+    <h2 data-i18n="g.title">No GitHub</h2>
+    <div id="ghBox"><p class="gh-loading mono" data-i18n="g.loading">carregando dados do GitHub…</p></div>
+  </section>
+
+  <section class="edu" id="formacao">
+    <p class="mono" style="color:var(--accent);font-size:.8rem;margin-bottom:1.5rem" data-i18n="e.label">05 — formação</p>
+    <h2 data-i18n="e.title">Formação</h2>
+    <div class="edu-card">
+      <div class="edu-line"><i></i></div>
+      <div>
+        <small class="mono" data-i18n="e.small">cursando · 4º semestre</small>
+        <h3 data-i18n="e.h">Sistemas para Internet</h3>
+        <p>Senac</p>
+        <div class="bar"><b></b></div>
+        <span class="prog mono" data-i18n="e.prog">4 de 5 semestres</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contato">
+    <p class="mono" style="color:var(--accent);font-size:.8rem;margin-bottom:2rem" data-i18n="k.label">06 — contato</p>
+    <h2 data-i18n-html="k.title">Vamos criar<br>algo <em>incrível</em>?</h2>
+
+    <div class="contact-actions">
+      <a href="curriculo-andre-martins.pdf" download class="btn" data-magnetic data-i18n="k.cv">baixar currículo ↓</a>
+      <a href="mailto:andreemartinns2@gmail.com" class="btn ghost" data-magnetic>andreemartinns2@gmail.com</a>
+    </div>
+
+    <div class="links mono">
+      <a href="https://github.com/andreemartinns" target="_blank" rel="noopener" data-magnetic>GitHub</a>
+      <a href="https://www.linkedin.com/in/andr%C3%A9-martins-2670bb302/" target="_blank" rel="noopener" data-magnetic>LinkedIn</a>
+      <a href="https://www.instagram.com/andree.martinns/" target="_blank" rel="noopener" data-magnetic>Instagram</a>
+      <a href="https://wa.me/5511970299013" target="_blank" rel="noopener" data-magnetic>WhatsApp</a>
+    </div>
+  </section>
+</main>
+
+<footer class="mono"><span>© 2026 André Luiz Jesus Martins</span><span data-i18n="ft">feito com código e café</span></footer>
+
+<!-- painel de detalhes dos projetos -->
+<div class="scrim" id="scrim"></div>
+<aside class="panel" id="panel" role="dialog" aria-modal="true" aria-label="Detalhes do projeto">
+  <div class="panel-top mono">
+    <span>// projeto</span>
+    <button class="theme" id="panelClose" aria-label="Fechar">✕</button>
+  </div>
+  <div class="panel-body" id="panelBody" data-lenis-prevent></div>
+</aside>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+const $ = (s, r = document) => r.querySelector(s);
+const root = document.documentElement;
+
+const GITHUB_USER = 'andreemartinns';
+const EMAIL = 'andreemartinns2@gmail.com';
+
+/* ---------- idioma (PT / EN) ---------- */
+const LANG = (() => { try { return localStorage.getItem('lang') === 'en' ? 'en' : 'pt'; } catch (e) { return 'pt'; } })();
+
+const EN = {
+  'title':'André Martins — Mobile & Full Stack Developer',
+  'l.tag':'loading portfolio…',
+  'n.about':'about','n.work':'projects','n.stack':'stack','n.github':'github','n.edu':'education','n.contact':'contact',
+  'h.eyebrow':'// open to new opportunities',
+  'h.role':'<span id="scramble">Mobile & Full Stack</span> Developer — apps and websites, front to back end.',
+  'h.cv':'download résumé ↓','h.proj':'see projects','h.scroll':'scroll to explore',
+  'a.label':'01 — about',
+  'a.text':'Second-to-last semester student of Internet Systems at Senac, I build complete products from mobile to back end. I develop APIs in Java with Spring Boot and Node.js, Angular websites and React Native apps, and I love turning ideas into fast, nicely animated interfaces.',
+  't.ph':"type 'help'",
+  'w.label':'02 — projects','w.title':'Selected<br>work','w.hint':'scroll → to browse',
+  'c.go':'view details ↗',
+  'c1.d':'Workout app for push/pull/legs training, with loads, personal records and a training streak.',
+  'c2.d':'Retro games subscription platform, from front end to back end, with an admin panel.',
+  'c3.d':'Website for a labor law firm in São Paulo. In development.',
+  'c4.d':'REST API in Java and Spring Boot for books, authors, loans and users. Final Web Services project at Senac.',
+  's.label':'03 — stack','s.title':'Technologies',
+  's.api':'REST APIs','s.web':'web front end','s.mobile':'mobile apps','s.mdev':'mobile development','s.lang':'language','s.back':'back end','s.db':'database',
+  's.more':'+ more to come','s.more2':'always learning',
+  'g.label':'04 — live github','g.title':'On GitHub','g.loading':'loading data from GitHub…',
+  'e.label':'05 — education','e.title':'Education','e.small':'in progress · 4th semester','e.h':'Internet Systems','e.prog':'4 of 5 semesters',
+  'k.label':'06 — contact','k.title':'Let’s build<br>something <em>amazing</em>?',
+  'k.cv':'download résumé ↓',
+  'ft':'made with code and coffee'
+};
+
+(function applyLang(){
+  root.lang = LANG === 'en' ? 'en' : 'pt-BR';
+  if (LANG !== 'en') return;
+  document.title = EN['title'];
+  document.querySelectorAll('[data-i18n]').forEach(el => { const v = EN[el.dataset.i18n]; if (v !== undefined) el.textContent = v; });
+  document.querySelectorAll('[data-i18n-html]').forEach(el => { const v = EN[el.dataset.i18nHtml]; if (v !== undefined) el.innerHTML = v; });
+  document.querySelectorAll('[data-i18n-ph]').forEach(el => { const v = EN[el.dataset.i18nPh]; if (v !== undefined) el.placeholder = v; });
+})();
+$('#langBtn').textContent = LANG === 'en' ? 'PT' : 'EN';
+$('#langBtn').addEventListener('click', () => {
+  try { localStorage.setItem('lang', LANG === 'en' ? 'pt' : 'en'); sessionStorage.setItem('skipIntro', '1'); } catch (e) {}
+  location.reload();
+});
+
+/* textos dinâmicos */
+const DYN = {
+  pt:{
+    gh_err:'Não consegui carregar os dados do GitHub agora.', gh_repos:'repositórios públicos', gh_followers:'seguidores', gh_stars:'estrelas',
+    gh_langs:'// linguagens mais usadas', gh_recent:'// repositórios recentes', gh_updated:'atualizado em', gh_noDesc:'Sem descrição.', gh_profile:'ver perfil completo ↗',
+    p_features:'// funcionalidades', p_stack:'// tecnologias', p_links:'// links', p_title:'// projeto', p_close:'Fechar'
+  },
+  en:{
+    gh_err:'Could not load GitHub data right now.', gh_repos:'public repositories', gh_followers:'followers', gh_stars:'stars',
+    gh_langs:'// most used languages', gh_recent:'// recent repositories', gh_updated:'updated on', gh_noDesc:'No description.', gh_profile:'view full profile ↗',
+    p_features:'// features', p_stack:'// tech', p_links:'// links', p_title:'// project', p_close:'Close'
+  }
+};
+const D = k => DYN[LANG][k];
+
+/* ---------- projetos (conteúdo do painel) ---------- */
+const PROJECTS = {
+  ritmo:{
+    num:'01 / 04', title:'App Ritmo Brasil', label:'RB', img:'img/ritmo-brasil.jpg', state:'live',
+    status:{pt:'No ar', en:'Live'},
+    summary:{
+      pt:'App de treino que fiz para organizar treinos no esquema push/pull/legs: registra as cargas, mostra os recordes e acompanha a constância.',
+      en:'A workout app I built to organize push/pull/legs training: it logs loads, shows personal records and tracks consistency.'
+    },
+    features:{
+      pt:['Treinos separados em push, pull e legs','Professor monta as fichas de treino','Mostra a última carga usada em cada exercício','Guarda o recorde pessoal de cada exercício','Conta a sequência de dias treinados','Meta de água com um copo que enche com animação','Formulário de saúde','Telas separadas para aluno, professor e administrador','Compartilha o treino finalizado como imagem para o story'],
+      en:['Workouts split into push, pull and legs','Coach builds the workout sheets','Shows the last load used for each exercise','Stores the personal record for each exercise','Tracks the training streak','Water goal with an animated filling glass','Health form','Separate screens for student, coach and admin','Shares the finished workout as an image for stories']
+    },
+    stack:['React Native','Expo','JavaScript','Supabase','Brevo'],
+    links:[
+      {label:{pt:'Abrir o app ↗', en:'Open the app ↗'}, href:'https://ritmobrasil-treino.netlify.app/'},
+      {label:{pt:'Código no GitHub ↗', en:'Code on GitHub ↗'}, href:'https://github.com/andreemartinns/push-pull-legs', ghost:true}
+    ]
+  },
+  archv:{
+    num:'02 / 04', title:'Archv Rooms', label:'AR', img:'img/archv-rooms.jpg', state:'live',
+    status:{pt:'No ar', en:'Live'},
+    summary:{
+      pt:'Plataforma de acesso a jogos retrô por assinatura. Projeto completo: front-end, API, banco de dados, pagamento de plano, painel administrativo e app mobile.',
+      en:'A subscription platform for retro games. A complete project: front end, API, database, plan checkout, admin panel and a mobile app.'
+    },
+    features:{
+      pt:['Home com vitrine de jogos','Login e cadastro com perfis de usuário e administrador','Planos, preços e checkout','Biblioteca de jogos do usuário e salas de jogo','Perfil do usuário','Painel admin: CRUD de jogos e categorias, gestão de usuários e permissões','API documentada com Swagger, incluindo back-end de chat'],
+      en:['Home with a game showcase','Sign in and sign up with user and admin roles','Plans, pricing and checkout','User game library and game rooms','User profile','Admin panel: games and categories CRUD, user and role management','API documented with Swagger, including a chat back end']
+    },
+    stack:['Angular 21','Node.js','Express','Prisma','MySQL','Swagger','React Native','Expo','Vercel','Render'],
+    note:{pt:'Projeto em equipe. O app mobile está em um repositório privado.', en:'Team project. The mobile app lives in a private repository.'},
+    links:[
+      {label:{pt:'Abrir o site ↗', en:'Open the site ↗'}, href:'https://archv-rooms-web.vercel.app/'},
+      {label:{pt:'Código no GitHub ↗', en:'Code on GitHub ↗'}, href:'https://github.com/archv-rooms', ghost:true}
+    ]
+  },
+  gpms:{
+    num:'03 / 04', title:'GPMS Advocacia', label:'GPMS', img:'img/advocacia.jpg', state:'dev',
+    status:{pt:'Em desenvolvimento', en:'In development'},
+    summary:{
+      pt:'Site para um escritório de advocacia trabalhista em São Paulo, com visual sofisticado e animações pensadas para transmitir confiança.',
+      en:'A website for a labor law firm in São Paulo, with a refined look and animations designed to convey trust.'
+    },
+    features:{
+      pt:['Páginas de temas trabalhistas','Contato com botão de WhatsApp','Mapa do escritório e galeria de perfis','Cards com inclinação 3D e luz que segue o ponteiro','Transição de página em cortina','Respeita a preferência de movimento reduzido'],
+      en:['Labor law topic pages','Contact with a WhatsApp button','Office map and profile gallery','Cards with 3D tilt and a light that follows the pointer','Curtain page transition','Respects the reduced-motion preference']
+    },
+    stack:['Angular','TypeScript','CSS'],
+    note:{pt:'Projeto em desenvolvimento, ainda sem link público.', en:'Project in development, no public link yet.'},
+    links:[]
+  },
+  biblioteca:{
+    num:'04 / 04', title:'API da Biblioteca', label:'API', img:'img/biblioteca-api.jpg', state:'live',
+    status:{pt:'Projeto concluído', en:'Completed'},
+    summary:{
+      pt:'API REST para gerenciar livros, autores, categorias, usuários e empréstimos, com relacionamentos 1-1, 1-N e N-N. Projeto final da disciplina de Web Services no Senac.',
+      en:'A REST API to manage books, authors, categories, users and loans, with 1-1, 1-N and N-N relationships. Final project of the Web Services course at Senac.'
+    },
+    features:{
+      pt:['Arquitetura em camadas: Controller, Service, Repository e Entity','Tratamento global de exceções e Bean Validation','Paginação, busca e HATEOAS','Documentação Swagger/OpenAPI','Coleção de testes no Postman'],
+      en:['Layered architecture: Controller, Service, Repository and Entity','Global exception handling and Bean Validation','Pagination, search and HATEOAS','Swagger/OpenAPI documentation','Postman test collection']
+    },
+    stack:['Java 17','Spring Boot','Spring Data JPA','H2','Maven','Docker'],
+    links:[
+      {label:{pt:'Código no GitHub ↗', en:'Code on GitHub ↗'}, href:'https://github.com/andreemartinns/biblioteca-api'}
+    ]
+  }
+};
+
+/* ---------- helpers ---------- */
+function el(tag, cls, text){ const e = document.createElement(tag); if (cls) e.className = cls; if (text !== undefined) e.textContent = text; return e; }
+function splitChars(node){
+  const txt = node.textContent; node.textContent = '';
+  [...txt].forEach(c => { const s = document.createElement('span'); s.className = 'ch'; s.textContent = c === ' ' ? '\u00A0' : c; node.appendChild(s); });
+  return node.querySelectorAll('.ch');
+}
+function splitWords(node){
+  const words = node.textContent.trim().split(/\s+/); node.textContent = '';
+  words.forEach(w => { const s = document.createElement('span'); s.className = 'w'; s.textContent = w; node.appendChild(s); });
+  return node.querySelectorAll('.w');
+}
+function scramble(node, finalText, duration = 1.2){
+  const chars = '!<>-_\\/[]{}—=+*^?#01'; const obj = {p:0};
+  gsap.to(obj, {p:1, duration, ease:'none', onUpdate(){
+    const n = Math.floor(obj.p * finalText.length);
+    node.textContent = finalText.slice(0, n) + [...finalText.slice(n)].map(c => c === ' ' ? ' ' : chars[Math.random() * chars.length | 0]).join('');
+  }, onComplete(){ node.textContent = finalText; }});
+}
+
+/* ---------- tema claro/escuro com transição circular ---------- */
+function setTheme(t){ root.dataset.theme = t; try { localStorage.setItem('theme', t); } catch (e) {} }
+function toggleTheme(x, y){
+  const next = root.dataset.theme === 'light' ? 'dark' : 'light';
+  if (!document.startViewTransition){ setTheme(next); return; }
+  const r = Math.hypot(Math.max(x, innerWidth - x), Math.max(y, innerHeight - y));
+  const vt = document.startViewTransition(() => setTheme(next));
+  vt.ready.then(() => {
+    root.animate({ clipPath: [`circle(0px at ${x}px ${y}px)`, `circle(${r}px at ${x}px ${y}px)`] },
+      { duration: 700, easing: 'ease-in-out', pseudoElement: '::view-transition-new(root)' });
+  });
+}
+$('#themeBtn').addEventListener('click', e => toggleTheme(e.clientX, e.clientY));
+
+/* ---------- scroll suave ---------- */
+const lenis = new Lenis({ lerp: 0.09 });
+lenis.on('scroll', ScrollTrigger.update);
+gsap.ticker.add(t => lenis.raf(t * 1000));
+gsap.ticker.lagSmoothing(0);
+lenis.stop();
+
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const id = a.getAttribute('href');
+    if (id.length > 1){ e.preventDefault(); lenis.scrollTo(id, {offset:0, duration:1.6}); }
+  });
+});
+
+/* ---------- cursor ---------- */
+const dot = $('.cursor'), ring = $('.cursor-ring');
+const dx = gsap.quickTo(dot,'x',{duration:.1}), dy = gsap.quickTo(dot,'y',{duration:.1});
+const rx = gsap.quickTo(ring,'x',{duration:.5,ease:'power3'}), ry = gsap.quickTo(ring,'y',{duration:.5,ease:'power3'});
+window.addEventListener('mousemove', e => { dx(e.clientX); dy(e.clientY); rx(e.clientX); ry(e.clientY); });
+document.addEventListener('mouseover', e => {
+  const hot = e.target.closest && e.target.closest('a, button, [data-magnetic], .card, input, textarea');
+  gsap.to(ring, {scale: hot ? 1.8 : 1, duration:.4, overwrite:'auto'});
+});
+
+/* ---------- botões magnéticos ---------- */
+document.querySelectorAll('[data-magnetic]').forEach(node => {
+  const mx = gsap.quickTo(node,'x',{duration:.6,ease:'elastic.out(1,.4)'});
+  const my = gsap.quickTo(node,'y',{duration:.6,ease:'elastic.out(1,.4)'});
+  node.addEventListener('mousemove', e => {
+    const r = node.getBoundingClientRect();
+    mx((e.clientX - (r.left + r.width / 2)) * .35);
+    my((e.clientY - (r.top + r.height / 2)) * .35);
+  });
+  node.addEventListener('mouseleave', () => { mx(0); my(0); });
+});
+
+/* ---------- spotlight ---------- */
+document.querySelectorAll('.card, .tech').forEach(node => {
+  node.addEventListener('mousemove', e => {
+    const r = node.getBoundingClientRect();
+    node.style.setProperty('--x', (e.clientX - r.left) + 'px');
+    node.style.setProperty('--y', (e.clientY - r.top) + 'px');
+  });
+});
+
+/* ---------- glow do hero ---------- */
+const glow = $('.glow');
+const gx = gsap.quickTo(glow,'left',{duration:1.2,ease:'power3'}), gy = gsap.quickTo(glow,'top',{duration:1.2,ease:'power3'});
+$('.hero').addEventListener('mousemove', e => {
+  const r = e.currentTarget.getBoundingClientRect();
+  gx(e.clientX - r.left); gy(e.clientY - r.top);
+});
+
+/* ---------- painel de detalhes ---------- */
+const panel = $('#panel'), scrim = $('#scrim'), panelBody = $('#panelBody');
+let lastFocus = null, panelOpen = false;
+
+function buildPanel(id){
+  const p = PROJECTS[id];
+  panelBody.replaceChildren();
+  const shot = el('div','shot panel-shot'); shot.dataset.label = p.label;
+  const img = document.createElement('img'); img.src = p.img; img.alt = p.title; img.onerror = () => img.remove();
+  shot.appendChild(img);
+  panelBody.append(shot, el('p','mono panel-num',p.num), el('h3',null,p.title));
+  panelBody.append(el('span','badge mono ' + p.state, p.status[LANG]));
+  panelBody.append(el('p','panel-sum',p.summary[LANG]));
+  panelBody.append(el('h4','mono',D('p_features')));
+  const ul = el('ul'); p.features[LANG].forEach(f => ul.append(el('li',null,f))); panelBody.append(ul);
+  panelBody.append(el('h4','mono',D('p_stack')));
+  const tags = el('div','tags'); p.stack.forEach(s => tags.append(el('span',null,s))); panelBody.append(tags);
+  if (p.note) panelBody.append(el('p','panel-note',p.note[LANG]));
+  if (p.links.length){
+    panelBody.append(el('h4','mono',D('p_links')));
+    const row = el('div','panel-links');
+    p.links.forEach(l => {
+      const a = el('a','btn' + (l.ghost ? ' ghost' : ''), l.label[LANG]);
+      a.href = l.href; a.target = '_blank'; a.rel = 'noopener'; row.append(a);
+    });
+    panelBody.append(row);
+  }
+}
+function openPanel(id){
+  if (panelOpen) return;
+  panelOpen = true; lastFocus = document.activeElement;
+  buildPanel(id);
+  $('.panel-top span').textContent = D('p_title');
+  $('#panelClose').setAttribute('aria-label', D('p_close'));
+  scrim.classList.add('open'); panel.classList.add('open');
+  lenis.stop();
+  gsap.fromTo(scrim, {opacity:0}, {opacity:1, duration:.5});
+  gsap.fromTo(panel, {clipPath:'inset(0 0 0 100%)'}, {clipPath:'inset(0 0 0 0%)', duration:.85, ease:'expo.inOut'});
+  gsap.from('#panelBody > *', {y:30, opacity:0, stagger:.06, delay:.4, duration:.7, ease:'power3.out'});
+  panelBody.scrollTop = 0;
+  setTimeout(() => $('#panelClose').focus(), 500);
+}
+function closePanel(){
+  if (!panelOpen) return;
+  panelOpen = false;
+  gsap.to(scrim, {opacity:0, duration:.5});
+  gsap.to(panel, {clipPath:'inset(0 0 0 100%)', duration:.65, ease:'expo.inOut', onComplete(){
+    panel.classList.remove('open'); scrim.classList.remove('open'); lenis.start();
+    if (lastFocus) lastFocus.focus();
+  }});
+}
+document.querySelectorAll('.card').forEach(c => c.addEventListener('click', () => openPanel(c.dataset.project)));
+$('#panelClose').addEventListener('click', closePanel);
+scrim.addEventListener('click', closePanel);
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closePanel(); });
+
+/* ---------- terminal interativo ---------- */
+const TERM = {
+  pt:{
+    welcome:["Bem-vindo ao meu terminal. Digite 'help' para ver os comandos."],
+    help:["comandos disponíveis:","  about     quem sou eu","  skills    tecnologias","  projects  meus projetos","  github    ir para a seção do GitHub","  contact   como falar comigo","  cv        baixar currículo","  theme     alternar tema claro/escuro","  clear     limpar o terminal"],
+    about:["André Luiz Jesus Martins","Desenvolvedor Mobile & Full Stack.","Estudante de Sistemas para Internet no Senac."],
+    skills:["Java · Spring Boot · Node.js · Angular · React Native · Expo · TypeScript · Supabase · MySQL"],
+    projects:["1. App Ritmo Brasil  (React Native)","2. Archv Rooms  (Angular, Node.js, React Native)","3. GPMS Advocacia  (Angular) — em desenvolvimento","4. API da Biblioteca  (Java, Spring Boot)"],
+    contact:[EMAIL,"github.com/" + GITHUB_USER,"WhatsApp: wa.me/5511970299013"],
+    github:["Indo para a seção do GitHub…"], cv:["Baixando currículo…"], theme:["Tema alternado."],
+    hire:["permissão concedida. André contratado. 🎉","(agora manda um e-mail pra confirmar!)"],
+    unknown:c => "comando não encontrado: " + c + ". Digite 'help'."
+  },
+  en:{
+    welcome:["Welcome to my terminal. Type 'help' to see the commands."],
+    help:["available commands:","  about     who I am","  skills    technologies","  projects  my projects","  github    jump to the GitHub section","  contact   how to reach me","  cv        download résumé","  theme     toggle light/dark theme","  clear     clear the terminal"],
+    about:["André Luiz Jesus Martins","Mobile & Full Stack Developer.","Internet Systems student at Senac."],
+    skills:["Java · Spring Boot · Node.js · Angular · React Native · Expo · TypeScript · Supabase · MySQL"],
+    projects:["1. Ritmo Brasil App  (React Native)","2. Archv Rooms  (Angular, Node.js, React Native)","3. GPMS Advocacia  (Angular) — in development","4. Library API  (Java, Spring Boot)"],
+    contact:[EMAIL,"github.com/" + GITHUB_USER,"WhatsApp: wa.me/5511970299013"],
+    github:["Jumping to the GitHub section…"], cv:["Downloading résumé…"], theme:["Theme toggled."],
+    hire:["permission granted. André hired. 🎉","(now send an email to confirm!)"],
+    unknown:c => "command not found: " + c + ". Type 'help'."
+  }
+};
+(function terminal(){
+  const body = $('#termBody'), input = $('#termInput'), T = TERM[LANG];
+  const history = []; let hi = 0;
+  function print(lines, cls){
+    lines.forEach(l => { const d = el('div', cls, l); body.appendChild(d); });
+    body.scrollTop = body.scrollHeight;
+  }
+  print(T.welcome);
+  const actions = {
+    about:()=>print(T.about), skills:()=>print(T.skills), projects:()=>print(T.projects), contact:()=>print(T.contact), help:()=>print(T.help),
+    clear:()=>{ body.replaceChildren(); },
+    github:()=>{ print(T.github); lenis.scrollTo('#github', {duration:1.6}); },
+    cv:()=>{ print(T.cv); const a = document.createElement('a'); a.href = 'curriculo-andre-martins.pdf'; a.download = ''; a.click(); },
+    theme:()=>{ print(T.theme); toggleTheme(innerWidth / 2, innerHeight / 2); }
+  };
+  input.addEventListener('keydown', e => {
+    if (e.key === 'ArrowUp'){ e.preventDefault(); if (hi > 0){ hi--; input.value = history[hi]; } return; }
+    if (e.key === 'ArrowDown'){ e.preventDefault(); if (hi < history.length - 1){ hi++; input.value = history[hi]; } else { hi = history.length; input.value = ''; } return; }
+    if (e.key !== 'Enter') return;
+    const raw = input.value.trim(); input.value = '';
+    if (!raw) return;
+    history.push(raw); hi = history.length;
+    const line = el('div','cmd'); const b = el('b',null,'$ '); line.append(b, document.createTextNode(raw)); body.appendChild(line);
+    const c = raw.toLowerCase();
+    if (c === 'sudo hire me') print(T.hire);
+    else if (actions[c]) actions[c]();
+    else print([T.unknown(raw)]);
+    body.scrollTop = body.scrollHeight;
+  });
+})();
+
+/* ---------- prepara textos ---------- */
+const heroChars = [...document.querySelectorAll('.hero .split')].flatMap(l => [...splitChars(l)]);
+const aboutWords = splitWords($('#about-text'));
+const heroItems = ['.hero .eyebrow', '.hero .role', '.hero .btn-row', '.scroll-hint'];
+gsap.set(heroChars, {yPercent:120, rotate:8});
+gsap.set(heroItems, {opacity:0, y:20});
+
+/* ---------- preloader + intro ---------- */
+let skipIntro = false;
+try { skipIntro = sessionStorage.getItem('skipIntro') === '1'; sessionStorage.removeItem('skipIntro'); } catch (e) {}
+const counter = $('.loader .count'); const state = {n:0};
+const tl = gsap.timeline({defaults:{ease:'power4.inOut'}});
+if (skipIntro){
+  gsap.set('.loader', {yPercent:-100}); lenis.start();
+} else {
+  tl.to(state, {n:100, duration:1.8, ease:'power2.out', onUpdate:() => counter.textContent = Math.round(state.n)})
+    .to('.loader', {yPercent:-100, duration:1})
+    .add(() => lenis.start(), '-=.4');
+}
+tl.to(heroChars, {yPercent:0, rotate:0, duration:1.1, stagger:.035, ease:'expo.out'}, skipIntro ? 0 : '-=.6')
+  .to(heroItems, {opacity:1, y:0, duration:.9, stagger:.12, ease:'power3.out'}, '-=.7')
+  .add(() => scramble($('#scramble'), 'Mobile & Full Stack'), '-=.8');
+
+gsap.to('.scroll-hint i', {scaleX:.2, repeat:-1, yoyo:true, duration:1.1, ease:'sine.inOut'});
+
+/* ---------- hero parallax ---------- */
+gsap.to('.hero h1', {yPercent:-18, ease:'none', scrollTrigger:{trigger:'.hero', start:'top top', end:'bottom top', scrub:true}});
+
+/* ---------- marquee ---------- */
+const marquee = gsap.to('.marquee .track', {xPercent:-50, duration:22, ease:'none', repeat:-1});
+ScrollTrigger.create({
+  onUpdate(self){
+    const v = gsap.utils.clamp(-6, 6, self.getVelocity() / 180);
+    gsap.timeline()
+      .to(marquee, {timeScale: v >= 0 ? 1 + Math.abs(v) * 2 : -(1 + Math.abs(v) * 2), duration:.2})
+      .to(marquee, {timeScale:1, duration:1.2});
+  }
+});
+
+/* ---------- sobre ---------- */
+gsap.to(aboutWords, {opacity:1, stagger:.12, ease:'none',
+  scrollTrigger:{trigger:'#about-text', start:'top 80%', end:'bottom 45%', scrub:true}});
+gsap.from('.term', {y:60, opacity:0, duration:1, ease:'power3.out', scrollTrigger:{trigger:'.term', start:'top 90%'}});
+
+/* ---------- projetos: scroll horizontal ---------- */
+const rail = $('.rail');
+const getDist = () => rail.scrollWidth - window.innerWidth;
+gsap.to(rail, {x:() => -getDist(), ease:'none',
+  scrollTrigger:{trigger:'.work', start:'top top', end:() => '+=' + getDist(), pin:true, scrub:1, invalidateOnRefresh:true}});
+
+/* ---------- stack ---------- */
+gsap.from('.tech', {y:60, opacity:0, duration:.9, stagger:.08, ease:'power3.out', scrollTrigger:{trigger:'.grid', start:'top 85%'}});
+gsap.from('.stack h2', {y:80, opacity:0, duration:1, ease:'expo.out', scrollTrigger:{trigger:'.stack h2', start:'top 90%'}});
+gsap.from('.gh h2', {y:80, opacity:0, duration:1, ease:'expo.out', scrollTrigger:{trigger:'.gh h2', start:'top 90%'}});
+
+/* ---------- GitHub ao vivo ---------- */
+(async function github(){
+  const box = $('#ghBox');
+  const colors = {JavaScript:'#f1e05a', TypeScript:'#3178c6', HTML:'#e34c26', CSS:'#a56de2', SCSS:'#c6538c', Java:'#b07219', Python:'#3572a5', Kotlin:'#a97bff', Dart:'#00b4ab'};
+  try {
+    const base = 'https://api.github.com/users/' + GITHUB_USER;
+    const [u, r] = await Promise.all([
+      fetch(base).then(x => { if (!x.ok) throw 0; return x.json(); }),
+      fetch(base + '/repos?per_page=100&sort=pushed').then(x => { if (!x.ok) throw 0; return x.json(); })
+    ]);
+    const repos = r.filter(x => !x.fork && x.name.toLowerCase() !== GITHUB_USER.toLowerCase());
+    const stars = repos.reduce((s, x) => s + x.stargazers_count, 0);
+    const langCount = {};
+    repos.forEach(x => { if (x.language) langCount[x.language] = (langCount[x.language] || 0) + 1; });
+    const langs = Object.entries(langCount).sort((a, b) => b[1] - a[1]).slice(0, 5);
+    const total = langs.reduce((s, l) => s + l[1], 0) || 1;
+
+    box.replaceChildren();
+    // números
+    const stats = el('div','gh-stats');
+    [[u.public_repos, D('gh_repos')], [u.followers, D('gh_followers')], [stars, D('gh_stars')]].forEach(([val, label]) => {
+      const s = el('div','stat'); const b = el('b',null,'0'); b.dataset.val = val; s.append(b, el('small','mono',label)); stats.append(s);
+    });
+    box.append(stats);
+    // linguagens
+    if (langs.length){
+      box.append(el('h5','mono',D('gh_langs')));
+      const bar = el('div','langbar'), legend = el('div','legend mono');
+      langs.forEach(([name, n]) => {
+        const c = colors[name] || '#7d8391';
+        const seg = el('i'); seg.style.width = (n / total * 100) + '%'; seg.style.background = c; bar.append(seg);
+        const lg = el('span',null,name + ' · ' + Math.round(n / total * 100) + '%'); lg.style.setProperty('--c', c); legend.append(lg);
+      });
+      box.append(bar, legend);
+    }
+    // repositórios recentes
+    box.append(el('h5','mono',D('gh_recent')));
+    const grid = el('div','repos');
+    repos.slice(0, 6).forEach(x => {
+      const a = el('a','repo'); a.href = x.html_url; a.target = '_blank'; a.rel = 'noopener';
+      const meta = el('div','meta mono');
+      if (x.language) meta.append(el('span',null,x.language));
+      meta.append(el('span',null,'★ ' + x.stargazers_count));
+      meta.append(el('span',null,D('gh_updated') + ' ' + new Date(x.pushed_at).toLocaleDateString(LANG === 'en' ? 'en-US' : 'pt-BR', {day:'2-digit', month:'short', year:'numeric'})));
+      a.append(el('b',null,x.name), el('p',null,x.description || D('gh_noDesc')), meta);
+      grid.append(a);
+    });
+    box.append(grid);
+    const more = el('a','gh-more mono',D('gh_profile')); more.href = u.html_url; more.target = '_blank'; more.rel = 'noopener';
+    box.append(more);
+
+    // animações
+    ScrollTrigger.refresh();
+    gsap.from('.stat', {y:40, opacity:0, duration:.8, stagger:.1, ease:'power3.out', scrollTrigger:{trigger:'.gh-stats', start:'top 88%'}});
+    document.querySelectorAll('.stat b').forEach(b => {
+      const o = {n:0};
+      ScrollTrigger.create({trigger:b, start:'top 90%', once:true, onEnter(){
+        gsap.to(o, {n:+b.dataset.val, duration:1.6, ease:'power2.out', onUpdate:() => b.textContent = Math.round(o.n)});
+      }});
+    });
+    gsap.from('.langbar i', {scaleX:0, transformOrigin:'left', duration:1.1, stagger:.1, ease:'power3.out', scrollTrigger:{trigger:'.langbar', start:'top 90%'}});
+    gsap.from('.repo', {y:50, opacity:0, duration:.8, stagger:.08, ease:'power3.out', scrollTrigger:{trigger:'.repos', start:'top 88%'}});
+  } catch (err) {
+    box.replaceChildren();
+    const p = el('p','gh-loading mono',D('gh_err') + ' ');
+    const a = el('a','gh-more',D('gh_profile')); a.href = 'https://github.com/' + GITHUB_USER; a.target = '_blank'; a.rel = 'noopener';
+    p.append(a); box.append(p);
+  }
+})();
+
+/* ---------- formação ---------- */
+gsap.from('.edu h2', {y:80, opacity:0, duration:1, ease:'expo.out', scrollTrigger:{trigger:'.edu h2', start:'top 90%'}});
+gsap.from('.edu-card', {y:60, opacity:0, duration:1, ease:'power3.out', scrollTrigger:{trigger:'.edu-card', start:'top 88%'}});
+gsap.to('.edu-line i', {scaleY:1, ease:'none', scrollTrigger:{trigger:'.edu-card', start:'top 80%', end:'bottom 50%', scrub:true}});
+gsap.fromTo('.bar b', {scaleX:0}, {scaleX:.8, duration:1.6, ease:'power3.out', scrollTrigger:{trigger:'.bar', start:'top 90%'}});
+
+/* ---------- contato ---------- */
+gsap.from('.contact h2', {y:100, opacity:0, duration:1.2, ease:'expo.out', scrollTrigger:{trigger:'.contact', start:'top 70%'}});
+gsap.from('.contact-actions .btn', {scale:.7, opacity:0, duration:1, stagger:.12, ease:'elastic.out(1,.5)', scrollTrigger:{trigger:'.contact-actions', start:'top 92%'}});
+gsap.from('.links a', {y:30, opacity:0, duration:.8, stagger:.08, ease:'power3.out', scrollTrigger:{trigger:'.links', start:'top 95%'}});
+</script>
+
+<script>
+/* ---------- fundo: constelação de partículas ---------- */
+(function () {
+  const hero = document.querySelector('.hero');
+  const canvas = document.getElementById('bg');
+  if (!hero || !canvas) return;
+  const ctx = canvas.getContext('2d');
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
+
+  let W = 0, H = 0, pts = [], rgb = '61,125,255', light = false, visible = true;
+  const mouse = { x: -9999, y: -9999 };
+  const MOUSE_R = 200;   // raio de influência do mouse
+  const MAX = fine ? 150 : 70; // máximo de pontos
+
+  function readTheme() {
+    rgb = getComputedStyle(document.documentElement).getPropertyValue('--accent-rgb').trim() || rgb;
+    light = document.documentElement.dataset.theme === 'light';
+    if (reduce) frame(0);
+  }
+
+  function make() {
+    const n = Math.min(MAX, Math.round(W * H / 9500));
+    pts = Array.from({ length: n }, () => {
+      const z = 0.25 + Math.random() * 0.75;          // "profundidade"
+      const a = Math.random() * Math.PI * 2;
+      const sp = (0.15 + Math.random() * 0.25) * z;
+      return { x: Math.random() * W, y: Math.random() * H, vx: Math.cos(a) * sp, vy: Math.sin(a) * sp, z, ph: Math.random() * 6.28 };
+    });
+  }
+
+  function size() {
+    const dpr = Math.min(devicePixelRatio || 1, 2);
+    W = hero.clientWidth; H = hero.clientHeight;
+    canvas.width = W * dpr; canvas.height = H * dpr;
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    make();
+    if (reduce) frame(0);
+  }
+
+  function frame(t) {
+    ctx.clearRect(0, 0, W, H);
+    const link = W < 700 ? 90 : 135;
+    const lineA = light ? 0.5 : 0.38;
+
+    for (const p of pts) {
+      p.x += p.vx; p.y += p.vy;
+      if (p.x < -20) p.x = W + 20; else if (p.x > W + 20) p.x = -20;
+      if (p.y < -20) p.y = H + 20; else if (p.y > H + 20) p.y = -20;
+
+      const dx = mouse.x - p.x, dy = mouse.y - p.y;
+      const d = Math.hypot(dx, dy);
+      p.near = 0;
+      if (d < MOUSE_R && d > 0.01) {
+        const f = 1 - d / MOUSE_R;
+        p.near = f;
+        p.x += (dx / d) * f * 0.7 * p.z;               // atrai de leve
+        p.y += (dy / d) * f * 0.7 * p.z;
+        if (d < 55) { p.x -= (dx / d) * (55 - d) * 0.06; p.y -= (dy / d) * (55 - d) * 0.06; } // não gruda no cursor
+      }
+    }
+
+    ctx.lineWidth = 0.7;
+    for (let i = 0; i < pts.length; i++) {
+      const a = pts[i];
+      for (let j = i + 1; j < pts.length; j++) {
+        const b = pts[j];
+        const dx = a.x - b.x, dy = a.y - b.y;
+        if (dx > link || dx < -link || dy > link || dy < -link) continue;
+        const d = Math.hypot(dx, dy);
+        if (d < link) {
+          const al = (1 - d / link) * lineA * Math.min(a.z, b.z) * 1.4;
+          ctx.strokeStyle = `rgba(${rgb},${al})`;
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
+        }
+      }
+      // linhas do ponto até o mouse
+      if (a.near > 0) {
+        ctx.strokeStyle = `rgba(${rgb},${a.near * (light ? 0.8 : 0.65)})`;
+        ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(mouse.x, mouse.y); ctx.stroke();
+      }
+    }
+
+    for (const p of pts) {
+      const tw = 0.85 + 0.15 * Math.sin(t * 0.002 + p.ph);   // pisca de leve
+      const r = (1 + p.z * 1.6) * (1 + p.near * 0.9);
+      const al = Math.min(1, (0.3 + p.z * 0.5) * tw + p.near * 0.4) * (light ? 1.15 : 1);
+      ctx.fillStyle = `rgba(${rgb},${al})`;
+      ctx.beginPath(); ctx.arc(p.x, p.y, r, 0, 6.2832); ctx.fill();
+    }
+  }
+
+  if (fine) {
+    hero.addEventListener('mousemove', e => {
+      const r = hero.getBoundingClientRect();
+      mouse.x = e.clientX - r.left; mouse.y = e.clientY - r.top;
+    });
+    hero.addEventListener('mouseleave', () => { mouse.x = mouse.y = -9999; });
+  }
+
+  new MutationObserver(readTheme).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+  new IntersectionObserver(([e]) => (visible = e.isIntersecting)).observe(hero);
+  let rt; new ResizeObserver(() => { clearTimeout(rt); rt = setTimeout(size, 150); }).observe(hero);
+
+  readTheme(); size();
+  canvas.style.opacity = 1;
+
+  if (!reduce) {
+    (function loop(t) {
+      requestAnimationFrame(loop);
+      if (!visible || document.hidden) return;
+      frame(t);
+    })(0);
+  }
+})();
+</script>
+
+<script>
+/* ---------- animações extras ---------- */
+(function () {
+  if (typeof gsap === 'undefined') return;
+  if (matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const pt = document.documentElement.lang !== 'en';
+
+  /* 1. título do hero: letras se afastam e inclinam perto do ponteiro */
+  if (fine) {
+    const chars = $$('.hero .ch');
+    let ready = false;
+    setTimeout(() => (ready = true), 3200);
+    const hero = document.querySelector('.hero');
+    hero.addEventListener('mousemove', e => {
+      if (!ready) return;
+      chars.forEach(c => {
+        const r = c.getBoundingClientRect();
+        const ddx = e.clientX - (r.left + r.width / 2);
+        const ddy = e.clientY - (r.top + r.height / 2);
+        const s = Math.max(0, 1 - Math.hypot(ddx, ddy) / 220);
+        const dir = Math.sign(ddx) || 1;
+        gsap.to(c, { x: -dir * s * s * 38, skewX: -dir * s * 22, duration: 0.6, ease: 'power3.out', overwrite: 'auto' });
+      });
+    });
+    hero.addEventListener('mouseleave', () =>
+      gsap.to(chars, { x: 0, skewX: 0, duration: 1, ease: 'elastic.out(1,.5)', overwrite: 'auto' }));
+  }
+
+  /* 2. cards e techs com inclinação 3D */
+  if (fine) {
+    const tilt = (node, max) => {
+      gsap.set(node, { transformPerspective: 900 });
+      const rX = gsap.quickTo(node, 'rotationX', { duration: 0.6, ease: 'power3' });
+      const rY = gsap.quickTo(node, 'rotationY', { duration: 0.6, ease: 'power3' });
+      node.addEventListener('mousemove', e => {
+        const r = node.getBoundingClientRect();
+        rY(((e.clientX - r.left) / r.width - 0.5) * max);
+        rX(-((e.clientY - r.top) / r.height - 0.5) * max);
+      });
+      node.addEventListener('mouseleave', () => { rX(0); rY(0); });
+    };
+    $$('.card').forEach(c => tilt(c, 9));
+    $$('.tech').forEach(t => tilt(t, 14));
+  }
+
+  /* 3. parallax da imagem dentro de cada card no scroll horizontal */
+  const imgs = $$('.work .card .shot img');
+  gsap.ticker.add(() => {
+    imgs.forEach(img => {
+      const r = img.parentElement.getBoundingClientRect();
+      if (r.right < 0 || r.left > innerWidth) return;
+      const c = (r.left + r.width / 2 - innerWidth / 2) / innerWidth;
+      img.style.translate = -c * r.width * 0.14 + 'px 0';
+    });
+  });
+
+  /* 4. cards e marquee "arrastam" com a velocidade do scroll */
+  const setSkew = gsap.quickSetter($$('.card, .marquee span'), 'skewX', 'deg');
+  const proxy = { v: 0 };
+  ScrollTrigger.create({
+    onUpdate(self) {
+      const v = gsap.utils.clamp(-9, 9, self.getVelocity() / -260);
+      if (Math.abs(v) > Math.abs(proxy.v)) {
+        proxy.v = v;
+        gsap.to(proxy, { v: 0, duration: 0.9, ease: 'power3', overwrite: true, onUpdate: () => setSkew(proxy.v) });
+      }
+    }
+  });
+
+  /* 5. texto do "sobre" sai do desfoque palavra por palavra */
+  gsap.fromTo('#about-text .w', { filter: 'blur(7px)' }, {
+    filter: 'blur(0px)', stagger: 0.12, ease: 'none',
+    scrollTrigger: { trigger: '#about-text', start: 'top 80%', end: 'bottom 45%', scrub: true }
+  });
+
+  /* 6. títulos das seções fecham o espaçamento entre letras ao rolar */
+  $$('.stack h2, .gh h2, .edu h2').forEach(h => {
+    gsap.fromTo(h, { letterSpacing: '.08em' }, {
+      letterSpacing: '-.05em', ease: 'none',
+      scrollTrigger: { trigger: h, start: 'top 98%', end: 'top 55%', scrub: true }
+    });
+  });
+
+  /* 7. cursor vira rótulo "ver" sobre os cards */
+  if (fine) {
+    const ringEl = document.querySelector('.cursor-ring');
+    const label = document.createElement('span');
+    label.textContent = pt ? 'ver' : 'view';
+    ringEl.appendChild(label);
+    document.addEventListener('mouseover', e => {
+      const onCard = !!(e.target.closest && e.target.closest('.card'));
+      ringEl.classList.toggle('on', onCard);
+      if (onCard) gsap.to(ringEl, { scale: 2.4, duration: 0.4, overwrite: 'auto' });
+    });
+  }
+})();
+</script>
+</body>
+</html>
